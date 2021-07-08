@@ -3,12 +3,13 @@ import {Button, Card, CardImg, Col, Container, Pagination, Row} from "react-boot
 import {Link} from "react-router-dom";
 import ListGroup from "react-bootstrap/ListGroup";
 
-function ListPage() {
+function ListPage(props) {
 
     const [dataList, setDataList] = useState([]);
 
     useEffect(()=>{
-        fetch("http://localhost:5000/movieList").then(res=>{
+        let url = props.type==='movie'?'movieList':'tvList'
+        fetch("http://localhost:5000/"+url).then(res=>{
             return res.json();
         }).then(json=>{
             setDataList(json);
@@ -30,7 +31,7 @@ function ListPage() {
                 {
                     dataList.map(d=>(
                         <Col md={2} style={{'margin-bottom': '1.5rem' }}>
-                            <Link to={`/detail/${d.id}`}>
+                            <Link to={`/${props.type}/${d.id}`}>
                                 <Card>
                                     <Card.Img variant="top" src={d.poster_small} />
                                     <Card.Body style={{ padding: '.5rem'}}>
@@ -45,15 +46,15 @@ function ListPage() {
                     ))
                 }
             </Row>
-            <Row>
-                <Pagination>
-                    <Pagination.Item>{1}</Pagination.Item>
-                    <Pagination.Item>{2}</Pagination.Item>
-                    <Pagination.Item>{3}</Pagination.Item>
-                    <Pagination.Item>{4}</Pagination.Item>
-                    <Pagination.Item>{5}</Pagination.Item>
-                </Pagination>
-            </Row>
+            {/*<Row>*/}
+            {/*    <Pagination>*/}
+            {/*        <Pagination.Item>{1}</Pagination.Item>*/}
+            {/*        <Pagination.Item>{2}</Pagination.Item>*/}
+            {/*        <Pagination.Item>{3}</Pagination.Item>*/}
+            {/*        <Pagination.Item>{4}</Pagination.Item>*/}
+            {/*        <Pagination.Item>{5}</Pagination.Item>*/}
+            {/*    </Pagination>*/}
+            {/*</Row>*/}
 
         </Container>
     )

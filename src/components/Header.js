@@ -21,11 +21,11 @@ function header() {
                 <div className="collapse navbar-collapse" id="navbarCollapse">
                     <ul className="navbar-nav mr-auto">
                         <li className="nav-item active">
-                        <Link to="/list"><a className="nav-link" href="#">Movies <span className="sr-only">(current)</span></a></Link>
+                        <Link to="/movie"><a className="nav-link" href="#">Movies <span className="sr-only">(current)</span></a></Link>
                         
                         </li>
                         <li className="nav-item">
-                        <a className="nav-link" href="#">TV</a>
+                            <Link to="/tv"><a className="nav-link" href="#">TV</a></Link>
                         </li>
                     </ul>
                     <form className="form-inline mt-2 mt-md-0">

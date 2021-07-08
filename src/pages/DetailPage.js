@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react'
 import {Col, Container, Image, Jumbotron, Row} from "react-bootstrap";
 import {useParams} from "react-router-dom";
 
-function DetailPage() {
+function DetailPage(props) {
 
     const [data, setData] = useState({
         name: ""
@@ -10,7 +10,8 @@ function DetailPage() {
     const {id} = useParams();
 
     useEffect(()=>{
-        fetch(`http://localhost:5000/movieList/${id}`).then(res=>{
+        let url = props.type==='movie'?'movieList':'tvList'
+        fetch(`http://localhost:5000/${url}/${id}`).then(res=>{
             return res.json();
         }).then(json=>{
             setData(json);
