@@ -1,7 +1,5 @@
 import React from 'react'
 
-import '../assets/signin.css';
-
 export default function LoginPage() {
     return (
         <div className="conatiner text-center">

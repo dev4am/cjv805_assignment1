@@ -10,12 +10,12 @@ import './App.css';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
-import IndexPage from './components/IndexPage';
-import ListPage from './components/ListPage';
-import DetailPage from './components/DetailPage';
+import IndexPage from './pages/IndexPage';
+import ListPage from './pages/ListPage';
+import DetailPage from './pages/DetailPage';
 
-import RegisterPage from './components/RegisterPage';
-import LoginPage from './components/LoginPage';
+import RegisterPage from './pages/RegisterPage';
+import LoginPage from './pages/LoginPage';
 
 function App() {
   return (
@@ -31,15 +31,15 @@ function App() {
           <Route path="/list">
             <ListPage />
           </Route>
-          <Route path="/detail">
+          <Route path="/detail/:id">
             <DetailPage />
           </Route>
-          <Route path="/register">
-            <RegisterPage />
-          </Route>
-          <Route path="/login">
-            <LoginPage />
-          </Route>
+        {/*  <Route path="/register">*/}
+        {/*    <RegisterPage />*/}
+        {/*  </Route>*/}
+        {/*  <Route path="/login">*/}
+        {/*    <LoginPage />*/}
+        {/*  </Route>*/}
         </Switch>
 
         </main>

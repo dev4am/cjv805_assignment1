@@ -2,55 +2,30 @@ import React from 'react'
 
 import ListGroup from 'react-bootstrap/ListGroup'
 
-function Feature() {
+function Feature(props) {
+
     return (
         <>
             <div className="row">
                 <div className="col">
-                    Featured Movies
+                    {props.name}
                 </div>
                 <div className="col text-right">
-                    View More
+                    View More(TODO)
                 </div>
             </div>
             <div className="row">
                 <div className="col">
                     <ListGroup horizontal>
-                        <ListGroup.Item>
-                            <div class="card">
-                                <img src="p2656407373.webp" class="card-img-top" alt="..."/>
-                            </div>
-                        </ListGroup.Item>
-                        <ListGroup.Item>
-                            <div class="card">
-                                <img src="p2656407373.webp" class="card-img-top" alt="..."/>
-                            </div>
-                        </ListGroup.Item>
-                        <ListGroup.Item>
-                            <div class="card">
-                                <img src="p2656407373.webp" class="card-img-top" alt="..."/>
-                            </div>
-                        </ListGroup.Item>
-                        <ListGroup.Item>
-                            <div class="card">
-                                <img src="p2656407373.webp" class="card-img-top" alt="..."/>
-                            </div>
-                        </ListGroup.Item>
-                        <ListGroup.Item>
-                            <div class="card">
-                                <img src="p2656407373.webp" class="card-img-top" alt="..."/>
-                            </div>
-                        </ListGroup.Item>
-                        <ListGroup.Item>
-                            <div class="card">
-                                <img src="p2656407373.webp" class="card-img-top" alt="..."/>
-                            </div>
-                        </ListGroup.Item>
-                        <ListGroup.Item>
-                            <div class="card">
-                                <img src="p2656407373.webp" class="card-img-top" alt="..."/>
-                            </div>
-                        </ListGroup.Item>
+                        {
+                            props.list.map(o=>(
+                                <ListGroup.Item>
+                                    <div className="card">
+                                        <img src="p2656407373.webp" class="card-img-top" alt="..."/>
+                                    </div>
+                                </ListGroup.Item>
+                            ))
+                        }
                     </ListGroup>
                 </div>
             </div>

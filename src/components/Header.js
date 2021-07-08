@@ -10,7 +10,8 @@ import {
 function header() {
     return (
         <header>
-            <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <nav className="navbar navbar-expand-md navbar-dark bg-dark">
+            {/*<nav className="navbar navbar-expand-md navbar-dark fixed-top bg-dark">*/}
                 <Link to="/">
                 <a className="navbar-brand" href="#">VUDU</a>
                 </Link>

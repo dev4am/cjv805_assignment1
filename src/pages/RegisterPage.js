@@ -1,7 +1,5 @@
 import React from 'react'
 
-import '../assets/signin.css';
-
 function RegisterPage() {
     return (
         <div className="conatiner text-center">
