@@ -22,7 +22,7 @@ function App() {
         <Router>
             <Header/>
 
-            <main role="main">
+            <main role="main" style={{backgroundColor: 'rgb(5,28,43)', paddingBottom: "5rem"}}>
 
                 <Switch>
                     <Route exact path="/">

@@ -76,11 +76,19 @@
       "overview": "After years of facing megalomaniacal supervillains, monsters wreaking havoc on Metropolis, and alien invaders intent on wiping out the human race, The Man of Steel aka Clark Kent and Lois Lane come face to face with one of their greatest challenges ever: dealing with all the stress, pressures and complexities that come with being working parents in today's society."}
   ],
   "featuredMovieList": [
-    { "id": 1, "name": "movie1", "poster": "post.jpg" },
-    { "id": 2, "name": "movie2", "poster": "post.jpg" }
+    { "id": 1, "name": "Luca", "poster": "/poster/luca.jpg" },
+    { "id": 3, "name": "F9", "poster": "/poster/f9.jpg" },
+    { "id": 5, "name": "Cruella", "poster": "/poster/cruella.jpg" },
+    { "id": 6, "name": "The Tomorrow War", "poster": "/poster/war.jpg" },
+    { "id": 7, "name": "Wrath of Man", "poster": "/poster/man.jpg" },
+    { "id": 9, "name": "Spirit Untamed", "poster": "/poster/spirit.jpg" }
   ],
   "featuredTvList": [
-    { "id": 1, "name": "tv1", "poster": "" },
-    { "id": 2, "name": "tv1", "poster": "" }
+    { "id": 11, "name": "Somos", "poster": "/poster/somos.jpg" },
+    { "id": 10, "name": "Grey's Anatomy", "poster": "/poster/anatomy.jpg" },
+    { "id": 9, "name": "Record of Ragnarok", "poster": "/poster/record.jpg" },
+    { "id": 8, "name": "The Good Doctor", "poster": "/poster/doctor.jpg" },
+    { "id": 7, "name": "Lucifer", "poster": "/poster/lucifer.jpg" },
+    { "id": 6, "name": "iCarly", "poster": "/poster/icarly.jpg" }
   ]
 }

@@ -4,7 +4,7 @@ import ListGroup from 'react-bootstrap/ListGroup'
 import {Card} from "react-bootstrap";
 import {Link} from "react-router-dom";
 
-function Feature(props) {
+function Spotlight(props) {
 
     const cardBody = {
         maxWidth: '200px',
@@ -24,15 +24,7 @@ function Feature(props) {
             <div className="row">
                 <div className="col">
                     <div className="d-flex flex-row flex-nowrap overflow-auto">
-                        {
-                            props.list.map(o=>(
-                                <Card style={cardBody}>
-                                    <Link to={"/"+props.type+"/"+o.id}>
-                                        <img src={o.poster} className="card-img-top" alt="..."/>
-                                    </Link>
-                                </Card>
-                            ))
-                        }
+                        aaa
                     </div>
                 </div>
             </div>
@@ -40,4 +32,4 @@ function Feature(props) {
     )
 }
 
-export default Feature
+export default Spotlight

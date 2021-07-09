@@ -20,11 +20,11 @@ function ListPage(props) {
         <Container>
             <Row style={{'margin-top':'1.5rem', 'margin-bottom':'1.5rem'}}>
                 <Col>
-                    <div className="btn-group" role="group" aria-label="Basic example">
-                        <button type="button" className="btn btn-primary">Most Watched</button>
-                        <button type="button" className="btn btn-outline-primary">Released Date</button>
-                        <button type="button" className="btn btn-outline-primary">Recently Added</button>
-                    </div>
+                    {/*<div className="btn-group" role="group" aria-label="Basic example">*/}
+                    {/*    <button type="button" className="btn btn-primary">Most Watched</button>*/}
+                    {/*    <button type="button" className="btn btn-outline-primary">Released Date</button>*/}
+                    {/*    <button type="button" className="btn btn-outline-primary">Recently Added</button>*/}
+                    {/*</div>*/}
                 </Col>
             </Row>
             <Row>

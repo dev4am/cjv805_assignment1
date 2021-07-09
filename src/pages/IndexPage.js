@@ -2,6 +2,8 @@ import React, {useEffect, useState} from 'react'
 
 import Hero from '../components/Hero';
 import Feature from '../components/Feature';
+import {Card} from "react-bootstrap";
+import Spotlight from "../components/Spotlight";
 
 function IndexPage() {
 
@@ -28,9 +30,9 @@ function IndexPage() {
       <>
         <Hero/>
         <div class="container">
-          <Feature name="Featured Movies" list={featuredMovieList}/>
-          <Feature name="Featured TV Shows" list={featuredTvList}/>
-        {/*  Service*/}
+          <Feature name="Featured Movies" type="movie" list={featuredMovieList}/>
+          <Feature name="Featured TV Shows" type="tv" list={featuredTvList}/>
+            <Spotlight/>
         </div>
       </>
     )
