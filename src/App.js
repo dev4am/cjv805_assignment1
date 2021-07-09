@@ -40,12 +40,12 @@ function App() {
                     <Route path="/tv/:id">
                         <DetailPage key="tv" type="tv"/>
                     </Route>
-                    {/*  <Route path="/register">*/}
-                    {/*    <RegisterPage />*/}
-                    {/*  </Route>*/}
-                    {/*  <Route path="/login">*/}
-                    {/*    <LoginPage />*/}
-                    {/*  </Route>*/}
+                      <Route path="/register">
+                        <RegisterPage />
+                      </Route>
+                      <Route path="/login">
+                        <LoginPage />
+                      </Route>
                 </Switch>
 
             </main>
