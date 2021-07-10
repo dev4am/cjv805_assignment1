@@ -1,9 +1,6 @@
 import React from 'react'
 
 import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
     Link
   } from "react-router-dom";
 
@@ -17,25 +14,24 @@ function header() {
         <header>
             <nav className="navbar navbar-expand-md navbar-dark bg-dark" style={bg}>
             {/*<nav className="navbar navbar-expand-md navbar-dark fixed-top bg-dark">*/}
-                <Link to="/">
-                <a className="navbar-brand" href="#">Video Store</a>
+                <Link className="navbar-brand" to="/">
+                    Video Store
                 </Link>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarCollapse">
                     <ul className="navbar-nav mr-auto">
-                        <li className="nav-item active">
-                        <Link to="/movie"><a className="nav-link" href="#">Movies <span className="sr-only">(current)</span></a></Link>
-                        
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/movie">Movies</Link>
                         </li>
                         <li className="nav-item">
-                            <Link to="/tv"><a className="nav-link" href="#">TV</a></Link>
+                            <Link className="nav-link" to="/tv">TV</Link>
                         </li>
                     </ul>
                     <form className="form-inline mt-2 mt-md-0">
-                        <Link to="/login">
-                            <a className="nav-link" href="#" style={{color: "white"}}>Sign In</a>
+                        <Link className="nav-link" to="/login" style={{color: "white"}}>
+                            Sign In
                         </Link>
                         {/*<input className="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search"/>*/}
                         {/*<button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>*/}

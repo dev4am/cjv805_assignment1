@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import {Col, Container, Image, Jumbotron, Row} from "react-bootstrap";
+import {Col, Container, Image, Row} from "react-bootstrap";
 import {useParams} from "react-router-dom";
 
 function DetailPage(props) {
@@ -48,9 +48,10 @@ function DetailPage(props) {
                 <Col>
                     <h1 className="display-4">{data.name}({data.year})</h1>
                     <span>{data.tags} | {data.length}</span>
-                    <h5>Overview</h5>
+
+                    <h5 style={{marginTop: "2rem"}}>Overview</h5>
                     <p className="lead">{data.overview}</p>
-                    <h5>{data.director}</h5>
+                    <h5 style={{marginTop: "2rem"}}>{data.director}</h5>
                     <span>Director</span>
                     <hr className="my-4"/>
                     <a className="btn btn-primary btn-lg" href="#" role="button">Rent(${data.price_rent})</a>

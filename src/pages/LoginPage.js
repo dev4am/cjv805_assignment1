@@ -15,7 +15,7 @@ export default function LoginPage() {
         <Container>
             <Row>
                 <Col></Col>
-                <Col style={loginStyle}>
+                <Col xs={10} md={4} style={loginStyle}>
                     <form className="form-signin text-center">
 
                         <h1 className="h3 mb-3 font-weight-normal">Please sign in</h1>

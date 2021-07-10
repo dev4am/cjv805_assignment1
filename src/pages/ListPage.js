@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react'
-import {Button, Card, CardImg, Col, Container, Pagination, Row} from "react-bootstrap";
+import {Card, Col, Container, Row} from "react-bootstrap";
 import {Link} from "react-router-dom";
-import ListGroup from "react-bootstrap/ListGroup";
 
 function ListPage(props) {
 
@@ -18,7 +17,7 @@ function ListPage(props) {
 
     return (
         <Container>
-            <Row style={{'margin-top':'1.5rem', 'margin-bottom':'1.5rem'}}>
+            <Row style={{'paddingTop':'1.5rem', 'marginBottom':'1.5rem'}}>
                 <Col>
                     {/*<div className="btn-group" role="group" aria-label="Basic example">*/}
                     {/*    <button type="button" className="btn btn-primary">Most Watched</button>*/}
@@ -30,12 +29,12 @@ function ListPage(props) {
             <Row>
                 {
                     dataList.map(d=>(
-                        <Col md={2} style={{'margin-bottom': '1.5rem' }}>
+                        <Col key={d.id} xs={6} md={2} style={{'marginBottom': '1.5rem' }}>
                             <Link to={`/${props.type}/${d.id}`}>
                                 <Card>
                                     <Card.Img variant="top" src={d.poster_small} />
                                     <Card.Body style={{ padding: '.5rem'}}>
-                                        <Card.Title style={{ 'margin-bottom': '.5rem'}}>{d.name}</Card.Title>
+                                        <Card.Title className="text-truncate" style={{ 'marginBottom': '.5rem'}}>{d.name}</Card.Title>
                                         <Card.Text>
                                             {d.year}
                                         </Card.Text>

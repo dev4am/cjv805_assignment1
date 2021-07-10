@@ -15,7 +15,7 @@ function RegisterPage() {
         <Container>
             <Row>
                 <Col></Col>
-                <Col style={registerStyle}>
+                <Col xs={10} md={4} style={registerStyle}>
                     <form className="form-signin text-center">
 
                         <h1 className="h3 mb-3 font-weight-normal">Please register</h1>

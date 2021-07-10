@@ -1,19 +1,19 @@
 import React from 'react'
 
-import ListGroup from 'react-bootstrap/ListGroup'
 import {Card} from "react-bootstrap";
 import {Link} from "react-router-dom";
 
 function Feature(props) {
 
     const cardBody = {
+        minWidth: "150px",
         maxWidth: '200px',
         marginRight: '5px'
     }
 
     return (
         <>
-            <div className="row">
+            <div className="row" style={{marginTop: "3rem"}}>
                 <div className="col">
                     <h3 style={{color: "white"}}>{props.name}</h3>
                 </div>
@@ -26,7 +26,7 @@ function Feature(props) {
                     <div className="d-flex flex-row flex-nowrap overflow-auto">
                         {
                             props.list.map(o=>(
-                                <Card style={cardBody}>
+                                <Card key={o.id} style={cardBody}>
                                     <Link to={"/"+props.type+"/"+o.id}>
                                         <img src={o.poster} className="card-img-top" alt="..."/>
                                     </Link>

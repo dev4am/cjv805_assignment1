@@ -1,8 +1,6 @@
 import React from 'react'
 
-import ListGroup from 'react-bootstrap/ListGroup'
-import {Card, Col, Container, Image, Row} from "react-bootstrap";
-import {Link} from "react-router-dom";
+import {Card, Col, Row} from "react-bootstrap";
 
 function Spotlight(props) {
 

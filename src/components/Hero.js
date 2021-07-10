@@ -24,7 +24,7 @@ function Hero() {
     }
 
     return (
-        <Carousel>
+        <Carousel fade>
             <Carousel.Item style={carousel} className="d-flex align-items-center justify-content-center">
                 <div>
                 <div className="d-flex align-items-center justify-content-center">
