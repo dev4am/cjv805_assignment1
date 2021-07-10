@@ -10,7 +10,7 @@ function IndexPage() {
     const [featuredTvList, setFeaturedTvList] = useState([]);
 
     useEffect(()=>{
-        fetch("http://localhost:5000/featuredMovieList").then(res=>{
+        fetch("https://cjv805-fengkuizhang-db.herokuapp.com/featuredMovieList").then(res=>{
             return res.json();
         }).then(json=>{
             setFeaturedMovieList(json);
@@ -18,7 +18,7 @@ function IndexPage() {
     }, []);
 
     useEffect(()=>{
-        fetch("http://localhost:5000/featuredTvList").then(res=>{
+        fetch("https://cjv805-fengkuizhang-db.herokuapp.com/featuredTvList").then(res=>{
             return res.json();
         }).then(json=>{
             setFeaturedTvList(json);

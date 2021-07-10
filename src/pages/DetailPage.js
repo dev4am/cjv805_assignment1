@@ -11,7 +11,7 @@ function DetailPage(props) {
 
     useEffect(()=>{
         let url = props.type==='movie'?'movieList':'tvList'
-        fetch(`http://localhost:5000/${url}/${id}`).then(res=>{
+        fetch(`https://cjv805-fengkuizhang-db.herokuapp.com/${url}/${id}`).then(res=>{
             return res.json();
         }).then(json=>{
             setData(json);

@@ -8,7 +8,7 @@ function ListPage(props) {
 
     useEffect(()=>{
         let url = props.type==='movie'?'movieList':'tvList'
-        fetch("http://localhost:5000/"+url).then(res=>{
+        fetch("https://cjv805-fengkuizhang-db.herokuapp.com/"+url).then(res=>{
             return res.json();
         }).then(json=>{
             setDataList(json);
