@@ -1,17 +1,21 @@
 import React, {useEffect, useState} from 'react'
 import {Card, Col, Container, Row} from "react-bootstrap";
 import {Link} from "react-router-dom";
+import {BackendUrl} from "../BackendUrl";
 
 function ListPage(props) {
 
     const [dataList, setDataList] = useState([]);
 
     useEffect(()=>{
-        let url = props.type==='movie'?'movieList':'tvList'
-        fetch("https://cjv805-fengkuizhang-db.herokuapp.com/"+url).then(res=>{
+        let url = BackendUrl.ALL_TV;
+        if(props.type==='movie'){
+            url = BackendUrl.ALL_MOVIE;
+        }
+        fetch(url).then(res=>{
             return res.json();
         }).then(json=>{
-            setDataList(json);
+            setDataList(json.data);
         })
     }, []);
 

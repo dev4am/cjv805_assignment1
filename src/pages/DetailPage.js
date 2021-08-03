@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import {Col, Container, Image, Row} from "react-bootstrap";
 import {useParams} from "react-router-dom";
+import {BackendUrl} from "../BackendUrl";
 
 function DetailPage(props) {
 
@@ -10,11 +11,11 @@ function DetailPage(props) {
     const {id} = useParams();
 
     useEffect(()=>{
-        let url = props.type==='movie'?'movieList':'tvList'
-        fetch(`https://cjv805-fengkuizhang-db.herokuapp.com/${url}/${id}`).then(res=>{
+        let url = BackendUrl.VIDEO_DETAIL + '/' + id;
+        fetch(url).then(res=>{
             return res.json();
         }).then(json=>{
-            setData(json);
+            setData(json.data);
         })
     }, []);
 

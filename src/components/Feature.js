@@ -28,7 +28,7 @@ function Feature(props) {
                             props.list.map(o=>(
                                 <Card key={o.id} style={cardBody}>
                                     <Link to={"/"+props.type+"/"+o.id}>
-                                        <img src={o.poster} className="card-img-top" alt="..."/>
+                                        <img src={o.poster_small} className="card-img-top" alt="..."/>
                                     </Link>
                                 </Card>
                             ))

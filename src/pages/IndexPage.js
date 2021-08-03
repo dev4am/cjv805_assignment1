@@ -3,6 +3,7 @@ import React, {useEffect, useState} from 'react'
 import Hero from '../components/Hero';
 import Feature from '../components/Feature';
 import Spotlight from "../components/Spotlight";
+import {BackendUrl} from "../BackendUrl";
 
 function IndexPage() {
 
@@ -10,18 +11,18 @@ function IndexPage() {
     const [featuredTvList, setFeaturedTvList] = useState([]);
 
     useEffect(()=>{
-        fetch("https://cjv805-fengkuizhang-db.herokuapp.com/featuredMovieList").then(res=>{
+        fetch(BackendUrl.FEATURED_MOVIE, {credentials: 'include'}).then(res=>{
             return res.json();
         }).then(json=>{
-            setFeaturedMovieList(json);
+            setFeaturedMovieList(json.data);
         })
     }, []);
 
     useEffect(()=>{
-        fetch("https://cjv805-fengkuizhang-db.herokuapp.com/featuredTvList").then(res=>{
+        fetch(BackendUrl.FEATURED_TV, {credentials: 'include'}).then(res=>{
             return res.json();
         }).then(json=>{
-            setFeaturedTvList(json);
+            setFeaturedTvList(json.data);
         })
     }, []);
 

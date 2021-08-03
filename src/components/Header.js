@@ -1,10 +1,11 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 
 import {
     Link
   } from "react-router-dom";
+import Cookies from "js-cookie";
 
-function Header() {
+function Header(props) {
 
     const [menu, setMenu] = useState("");
 
@@ -18,6 +19,12 @@ function Header() {
         }else{
             setMenu("show");
         }
+    }
+
+    const handleLogout = ()=>{
+        // console.log("logout");
+        Cookies.remove("dvs_token");
+        props.setLoginState(false);
     }
 
     return (
@@ -40,11 +47,11 @@ function Header() {
                         </li>
                     </ul>
                     <form className="form-inline mt-2 mt-md-0">
-                        <Link className="nav-link" to="/login" onClick={ toggleMenu } style={{color: "white"}}>
-                            Sign In
+                        <Link className={`nav-link ${props.loginState?'invisible':''}`} to="/login" onClick={ toggleMenu } style={{color: "white"}}>
+                            Log In
                         </Link>
-                        {/*<input className="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search"/>*/}
-                        {/*<button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>*/}
+
+                        <a className={`nav-link ${props.loginState?'':'invisible'}`} style={{color: "white"}} onClick={handleLogout}>Log out</a>
                     </form>
                 </div>
             </nav>

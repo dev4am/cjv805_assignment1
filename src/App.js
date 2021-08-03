@@ -14,11 +14,25 @@ import DetailPage from './pages/DetailPage';
 
 import RegisterPage from './pages/RegisterPage';
 import LoginPage from './pages/LoginPage';
+import {useEffect, useState} from "react";
+import Cookies from "js-cookie";
 
 function App() {
+
+    const [loginState, setLoginState] = useState(false);
+
+    useEffect(()=>{
+        const cookie = Cookies.get('dvs_token');
+        if(cookie){
+            setLoginState(true);
+        }else{
+            setLoginState(false);
+        }
+    }, [])
+
     return (
         <Router>
-            <Header/>
+            <Header loginState={loginState} setLoginState={setLoginState}/>
 
             <main role="main" style={{backgroundColor: 'rgb(5,28,43)', paddingBottom: "5rem"}}>
 
@@ -42,7 +56,7 @@ function App() {
                         <RegisterPage />
                       </Route>
                       <Route path="/login">
-                        <LoginPage />
+                        <LoginPage setLoginState={setLoginState}/>
                       </Route>
                 </Switch>
 
