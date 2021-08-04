@@ -19,4 +19,4 @@ const prod = {
     VIDEO_DETAIL: "https://cjv805-fengkuizhang-springboot.herokuapp.com/video",
 }
 
-export const BackendUrl = process.env.ACTIVE_PROFILE || dev;
+export const BackendUrl = process.env.ACTIVE_PROFILE || prod;
