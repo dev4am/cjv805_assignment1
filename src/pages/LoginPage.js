@@ -39,11 +39,13 @@ export default function LoginPage(props) {
             body: JSON.stringify(loginForm) // body data type must match "Content-Type" header
         });
         const resJson = await res.json();
-        console.log(res.status);
+        console.log(resJson);
         if(res.status!=200){
             setFailMsgVisibility("visible");
             setFailMsg(resJson.msg);
         }else{
+            let token = resJson.data;
+            localStorage.setItem('token', token);
             props.setLoginState(true);
             history.push("/");
         }

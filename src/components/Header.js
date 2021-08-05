@@ -3,7 +3,6 @@ import React, {useEffect, useState} from 'react'
 import {
     Link, useHistory
 } from "react-router-dom";
-import Cookies from "js-cookie";
 import {BackendUrl} from "../BackendUrl";
 
 function Header(props) {
@@ -26,17 +25,17 @@ function Header(props) {
 
     const handleLogout = ()=>{
         // console.log("logout");
-        Cookies.remove("dvs_token");
+        localStorage.removeItem("token");
         props.setLoginState(false);
         history.push("/");
     }
 
     useEffect(()=>{
-        const token = Cookies.get("dvs_token");
+        const token = localStorage.getItem('token');
         if(token){
             fetch(BackendUrl.DASHBOARD, {
                 headers: {
-                    Authorization: Cookies.get("dvs_token"),
+                    Authorization: token,
                 }
                 // credentials: 'include'
             }).then(res=>{
@@ -72,7 +71,7 @@ function Header(props) {
                         </Link>
 
                         <Link className={`nav-link ${props.loginState?'':'invisible'}`} to="/user/dashboard" style={{color: "white"}}>
-                            {props.loginState?email:""}
+                            {email}
                         </Link>
 
                         <a className={`nav-link ${props.loginState?'':'invisible'}`} style={{color: "white"}} onClick={handleLogout}>Log out</a>

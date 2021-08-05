@@ -16,15 +16,14 @@ import UserDashboardPage from './pages/UserDashboardPage';
 import RegisterPage from './pages/RegisterPage';
 import LoginPage from './pages/LoginPage';
 import {useEffect, useState} from "react";
-import Cookies from "js-cookie";
 
 function App() {
 
     const [loginState, setLoginState] = useState(false);
 
     useEffect(()=>{
-        const cookie = Cookies.get('dvs_token');
-        if(cookie){
+        const token = localStorage.getItem('token');
+        if(token){
             setLoginState(true);
         }else{
             setLoginState(false);

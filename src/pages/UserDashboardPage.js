@@ -2,7 +2,6 @@ import React, {useEffect, useState} from 'react'
 import {Col, Container, Row} from "react-bootstrap";
 import {Link, useHistory} from "react-router-dom";
 import {BackendUrl} from "../BackendUrl";
-import Cookies from "js-cookie";
 
 export default function LoginPage(props) {
 
@@ -22,7 +21,7 @@ export default function LoginPage(props) {
     useEffect(()=>{
         fetch(BackendUrl.DASHBOARD, {
                 headers: {
-                    Authorization: Cookies.get("dvs_token"),
+                    Authorization: localStorage.getItem('token'),
                 }
                 // credentials: 'include'
             })
