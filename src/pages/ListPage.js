@@ -7,6 +7,11 @@ function ListPage(props) {
 
     const [dataList, setDataList] = useState([]);
 
+    const [searchForm, setSearchForm] = useState({
+        type: props.type,
+        q: ""
+    });
+
     useEffect(()=>{
         let url = BackendUrl.ALL_TV;
         if(props.type==='movie'){
@@ -19,6 +24,23 @@ function ListPage(props) {
         })
     }, []);
 
+    const handleSubmit = async (e)=>{
+        e.preventDefault();
+        let url = BackendUrl.SEARCH;
+        const res = await fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(searchForm)
+        });
+        const resJson = await res.json();
+        console.log(res.status);
+        if(res.status==200){
+            setDataList(resJson.data); //TODO no data
+        }
+    }
+
     return (
         <Container>
             <Row style={{'paddingTop':'1.5rem', 'marginBottom':'1.5rem'}}>
@@ -28,6 +50,10 @@ function ListPage(props) {
                     {/*    <button type="button" className="btn btn-outline-primary">Released Date</button>*/}
                     {/*    <button type="button" className="btn btn-outline-primary">Recently Added</button>*/}
                     {/*</div>*/}
+                    <form onSubmit={handleSubmit}>
+                        <input className="" value={searchForm.q} onChange={e => setSearchForm({...searchForm, q: e.target.value})}/>
+                        <button className="" type="submit">search</button>
+                    </form>
                 </Col>
             </Row>
             <Row>

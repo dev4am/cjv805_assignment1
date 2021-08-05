@@ -1,13 +1,16 @@
 import React, {useEffect, useState} from 'react'
 
 import {
-    Link
-  } from "react-router-dom";
+    Link, useHistory
+} from "react-router-dom";
 import Cookies from "js-cookie";
+import {BackendUrl} from "../BackendUrl";
 
 function Header(props) {
 
     const [menu, setMenu] = useState("");
+    const history = useHistory();
+    const [email, setEmail] = useState("");
 
     const bg = {
         backgroundImage: 'linear-gradient(to right, rgba(0,122,194, 1.00), rgba(5,28,43, 0))',
@@ -25,7 +28,24 @@ function Header(props) {
         // console.log("logout");
         Cookies.remove("dvs_token");
         props.setLoginState(false);
+        history.push("/");
     }
+
+    useEffect(()=>{
+        const token = Cookies.get("dvs_token");
+        if(token){
+            fetch(BackendUrl.DASHBOARD, {
+                headers: {
+                    Authorization: Cookies.get("dvs_token"),
+                }
+                // credentials: 'include'
+            }).then(res=>{
+                    return res.json();
+            }).then(json=>{
+                setEmail(json.data.email);
+            });
+        }
+    }, []);
 
     return (
         <header>
@@ -49,6 +69,10 @@ function Header(props) {
                     <form className="form-inline mt-2 mt-md-0">
                         <Link className={`nav-link ${props.loginState?'invisible':''}`} to="/login" onClick={ toggleMenu } style={{color: "white"}}>
                             Log In
+                        </Link>
+
+                        <Link className={`nav-link ${props.loginState?'':'invisible'}`} to="/user/dashboard" style={{color: "white"}}>
+                            {props.loginState?email:""}
                         </Link>
 
                         <a className={`nav-link ${props.loginState?'':'invisible'}`} style={{color: "white"}} onClick={handleLogout}>Log out</a>

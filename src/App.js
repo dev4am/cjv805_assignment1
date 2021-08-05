@@ -11,6 +11,7 @@ import Footer from './components/Footer';
 import IndexPage from './pages/IndexPage';
 import ListPage from './pages/ListPage';
 import DetailPage from './pages/DetailPage';
+import UserDashboardPage from './pages/UserDashboardPage';
 
 import RegisterPage from './pages/RegisterPage';
 import LoginPage from './pages/LoginPage';
@@ -58,6 +59,9 @@ function App() {
                       <Route path="/login">
                         <LoginPage setLoginState={setLoginState}/>
                       </Route>
+                    <Route path="/user/dashboard">
+                        <UserDashboardPage />
+                    </Route>
                 </Switch>
 
             </main>
